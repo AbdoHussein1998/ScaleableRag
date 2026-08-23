@@ -1,0 +1,132 @@
+# ================================
+# FastAPI
+# ================================
+fastapi
+uvicorn[standard]
+python-multipart
+
+# ================================
+# Logging
+# ================================
+loguru
+
+# ================================
+# MongoDB
+# ================================
+pymongo
+motor
+
+# ================================
+# Redis / RabbitMQ / Celery
+# ================================
+redis
+celery
+kombu
+amqp
+pika
+asgiref
+# ================================
+# Monitoring / Metrics
+# ================================
+prometheus-client
+prometheus-fastapi-instrumentator
+
+# ================================
+# PDF Processing
+# ================================
+pymupdf
+pdfplumber
+arabic_reshaper
+python-bidi
+
+# ================================
+# Main LangChain
+# ================================
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+
+# ================================
+# LangChain Addons (LLM / Embeddings)
+# ================================
+
+# OpenAI
+langchain-openai
+
+# Ollama
+langchain-ollama
+ollama
+
+# Google Gemini
+langchain-google-genai
+
+# Azure OpenAI
+azure-ai-inference
+azure-identity
+
+# Mistral AI
+langchain-mistralai
+
+# Anthropic Claude
+langchain-anthropic
+
+# HuggingFace
+langchain-huggingface
+transformers
+sentence-transformers
+
+# Cohere
+langchain-cohere
+
+# Groq
+langchain-groq
+
+# ================================
+# Vector Database
+# ================================
+qdrant-client
+
+# ================================
+# Environment Variables
+# ================================
+python-dotenv
+
+# ================================
+# Data Validation / Settings
+# ================================
+pydantic
+pydantic-settings
+
+# ================================
+# Async HTTP Support
+# ================================
+httpx
+aiofiles
+
+# ================================
+# Utilities
+# ================================
+tqdm
+numpy
+pandas
+
+# ================================
+# Jupyter Notebook
+# ================================
+jupyter
+notebook
+ipykernel
+
+# ================================
+# Optional Development Tools
+# ================================
+pytest
+black
+isort
+
+
+pyjwt
+authlib
+itsdangerous
+
