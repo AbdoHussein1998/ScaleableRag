@@ -6,7 +6,7 @@ from typing import Optional, Dict, Any
 from fastapi import Request, Response, HTTPException, status
 import loguru
 
-from Authentication.Schema.models import TokenPayload
+from src.Infrastructure.Authentication.Schema.models import TokenPayload
 from pprint import pprint as pp
 
 class JWTHandler:

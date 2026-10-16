@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Request,Response
 
 from Dependencies.auth_dependency import get_auth_service
 from Services.Services.auth_service import AuthService
-from Authentication.Schema.models import TokenPayload
+from src.Infrastructure.Authentication.Schema.models import TokenPayload
 auth_router = APIRouter(prefix="/api/v1/auth",tags=["Auth", "Google"],)
 
 @auth_router.get("/google/login",name="google_login",)

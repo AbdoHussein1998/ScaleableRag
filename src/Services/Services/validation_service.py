@@ -1,5 +1,5 @@
 # src\Services\Services\validation_service.py
-from Authentication.Providers.jwt_services_provider import JWTHandler
+from src.Infrastructure.Authentication.Providers.jwt_services_provider import JWTHandler
 import loguru
 from typing import Optional,Bool
 from fastapi import Request,Response

@@ -12,8 +12,8 @@ from langchain_core.prompts import ChatPromptTemplate
 from LLM.Generation.generation_factory import GenerationFactory, GenerationConfig
 from ..service_interface import ServiceInterface
 from ..Exceptions.clean_conversion_exc import CleanConversionException
-from DatabaseInfrastructure.Mongodb.async_dml import MongoDML
-from DatabaseInfrastructure.Mongodb.async_connection import MongoConnectionManager
+from Infrastructure.Mongodb.async_dml import MongoDML
+from Infrastructure.Mongodb.async_connection import MongoConnectionManager
 
 class TurnConversionsToJson(ServiceInterface):
     FAILED_COLLECTION = "falied_cleaned_jsons"

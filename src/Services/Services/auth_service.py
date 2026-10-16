@@ -5,11 +5,11 @@ from fastapi import Request
 from fastapi.responses import FileResponse, Response
 
 from Services.service_interface import ServiceInterface
-from Authentication.Providers.google_oauth_provider import GoogleOAuthHandler
-from Authentication.Providers.jwt_services_provider import JWTHandler
-from DatabaseInfrastructure.PostgreSQL.async_dml import PostgresDML
-from DatabaseInfrastructure.PostgreSQL.async_connection import PostgresConnectionManager
-from Authentication.Schema.models import TokenPayload
+from src.Infrastructure.Authentication.Providers.google_oauth_provider import GoogleOAuthHandler
+from src.Infrastructure.Authentication.Providers.jwt_services_provider import JWTHandler
+from Infrastructure.PostgreSQL.async_dml import PostgresDML
+from Infrastructure.PostgreSQL.async_connection import PostgresConnectionManager
+from Infrastructure.Authentication.Schema.models import TokenPayload
 from pprint import pprint as pp
 
 class AuthService(ServiceInterface):
@@ -125,3 +125,9 @@ class AuthService(ServiceInterface):
             refresh_token=token_data["refresh_token"],
         )
         return response
+
+    
+
+
+
+

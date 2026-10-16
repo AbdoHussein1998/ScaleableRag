@@ -5,10 +5,10 @@ import loguru
 from Api.ApiConfiguration.api_settings import ApplicationBasicSettings
 
 # All imports at top
-from DatabaseInfrastructure.Mongodb import MongoConnectionManager
-from DatabaseInfrastructure.PostgreSQL import PostgresConnectionManager
-from DatabaseInfrastructure.Redis.async_connection import RedisConnectionManager
-from qdrant_client import AsyncQdrantClient
+from Infrastructure.Mongodb import MongoConnectionManager
+from Infrastructure.PostgreSQL import PostgresConnectionManager
+from Infrastructure.Redis.async_connection import RedisConnectionManager
+# from qdrant_client import AsyncQdrantClient
 from LLM.Embedding import EmbeddingFactory, EmbeddingConfig
 from LLM.Generation import GenerationFactory, GenerationConfig
 
@@ -139,32 +139,32 @@ class RedisManager:
 #  Qdrant Manager
 # ═══════════════════════════════════════════════════════════════
 
-class QdrantManager:
-    def __init__(self, logger: Optional[loguru._logger.Logger] = None):
-        self.logger = logger or loguru.logger
+# class QdrantManager:
+#     def __init__(self, logger: Optional[loguru._logger.Logger] = None):
+#         self.logger = logger or loguru.logger
 
-        # Omni (primary) Qdrant client
-        self.omni_qdrant_client: Optional[Any] = None
+#         # Omni (primary) Qdrant client
+#         self.omni_qdrant_client: Optional[Any] = None
 
-        # Reserved for future split:
-        # self.embeddings_qdrant_client: Optional[Any] = None
-        # self.memory_qdrant_client: Optional[Any] = None
+#         # Reserved for future split:
+#         # self.embeddings_qdrant_client: Optional[Any] = None
+#         # self.memory_qdrant_client: Optional[Any] = None
 
-    async def connect(self, settings: ApplicationBasicSettings) -> None:
-        self.logger.info("[QdrantManager] connecting OMNI Qdrant...")
-        try:
-            self.omni_qdrant_client = AsyncQdrantClient(url=settings.OMNI_QDRANT_URL)
-        except Exception as exc:
-            self.logger.exception(f"[QdrantManager] OMNI connection failed: {exc}")
-            raise
+#     async def connect(self, settings: ApplicationBasicSettings) -> None:
+#         self.logger.info("[QdrantManager] connecting OMNI Qdrant...")
+#         try:
+#             self.omni_qdrant_client = AsyncQdrantClient(url=settings.OMNI_QDRANT_URL)
+#         except Exception as exc:
+#             self.logger.exception(f"[QdrantManager] OMNI connection failed: {exc}")
+#             raise
 
-    async def disconnect(self) -> None:
-        if self.omni_qdrant_client is not None:
-            try:
-                self.logger.info("[QdrantManager] disconnecting OMNI Qdrant...")
-                await self.omni_qdrant_client.close()
-            except Exception as exc:
-                self.logger.error(f"[QdrantManager] OMNI disconnect failed: {exc}")
+#     async def disconnect(self) -> None:
+#         if self.omni_qdrant_client is not None:
+#             try:
+#                 self.logger.info("[QdrantManager] disconnecting OMNI Qdrant...")
+#                 await self.omni_qdrant_client.close()
+#             except Exception as exc:
+#                 self.logger.error(f"[QdrantManager] OMNI disconnect failed: {exc}")
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -233,6 +233,6 @@ ALL_MANAGERS: dict[str, type] = {
     "mongo": MongoManager,
     "postgres": PostgresManager,
     "redis": RedisManager,
-    "qdrant": QdrantManager,
+    # "qdrant": QdrantManager,
     "llm": LLMManager,
 }

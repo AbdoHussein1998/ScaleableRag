@@ -9,7 +9,7 @@ from .api_application_services import (
     MongoManager,
     PostgresManager,
     RedisManager,
-    QdrantManager,
+    # QdrantManager,
     LLMManager,
 )
 
